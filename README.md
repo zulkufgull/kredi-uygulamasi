@@ -148,7 +148,7 @@ GET /credit-types
 GET /credit-types/search/by-amount?amount=25000
 ```
 
-### Kredi Hesaplama
+
 
 #### Kredi Hesaplama
 ```http
