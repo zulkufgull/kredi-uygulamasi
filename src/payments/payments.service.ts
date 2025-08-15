@@ -21,7 +21,7 @@ export class PaymentsService {
     });
 
     if (!creditApplication) {
-      console.log(`❌ Kredi başvurusu bulunamadı: ${creditApplicationId}`);
+      console.log(` Kredi başvurusu bulunamadı: ${creditApplicationId}`);
       throw new NotFoundException('Kredi başvurusu bulunamadı');
     }
 
@@ -31,7 +31,7 @@ export class PaymentsService {
     console.log(`   - Onaylanan vade: ${creditApplication.approvedTerm}`);
 
     if (creditApplication.status !== 'approved') {
-      console.log(`❌ Kredi henüz onaylanmamış: ${creditApplication.status}`);
+      console.log(` Kredi henüz onaylanmamış: ${creditApplication.status}`);
       throw new BadRequestException('Sadece onaylanmış krediler için ödeme planı oluşturulabilir');
     }
 
@@ -45,7 +45,7 @@ export class PaymentsService {
     const startDate = new Date();
     startDate.setMonth(startDate.getMonth() + 1); // İlk ödeme bir ay sonra
 
-    console.log(`📊 Ödeme planı hesaplamaları:`);
+    console.log(` Ödeme planı hesaplamaları:`);
     console.log(`   - Aylık taksit: ${monthlyPayment} TL`);
     console.log(`   - Toplam tutar: ${totalAmount} TL`);
     console.log(`   - Vade: ${term} ay`);
@@ -81,15 +81,15 @@ export class PaymentsService {
       console.log(`   - Taksit ${i}: ${monthlyPayment} TL (${dueDate.toLocaleDateString('tr-TR')})`);
     }
 
-    console.log(`💾 Ödeme planı veritabanına kaydediliyor...`);
+    console.log(` Ödeme planı veritabanına kaydediliyor...`);
     console.log(`   - Kaydedilecek taksit sayısı: ${payments.length}`);
     
     try {
       const savedPayments = await this.paymentRepository.save(payments);
-      console.log(`✅ Ödeme planı başarıyla kaydedildi: ${savedPayments.length} taksit`);
+      console.log(` Ödeme planı başarıyla kaydedildi: ${savedPayments.length} taksit`);
       return savedPayments;
     } catch (error) {
-      console.error(`❌ Ödeme planı kaydedilemedi: ${error.message}`);
+      console.error(` Ödeme planı kaydedilemedi: ${error.message}`);
       console.error(`   - Hata detayı:`, error);
       console.error(`   - Stack trace:`, error.stack);
       throw error;
