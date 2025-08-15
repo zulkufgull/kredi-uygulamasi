@@ -217,9 +217,7 @@ Production ortamında:
 3. Environment variables kullanın
 4. Logging'i yapılandırın
 
-## 📝 Lisans
 
-Bu proje MIT lisansı altında lisanslanmıştır.
 
 ## 🤝 Katkıda Bulunma
 
@@ -229,6 +227,6 @@ Bu proje MIT lisansı altında lisanslanmıştır.
 4. Push edin (`git push origin feature/amazing-feature`)
 5. Pull Request oluşturun
 
-## 📞 İletişim
 
-Sorularınız için issue açabilir veya iletişime geçebilirsiniz.
+
+
