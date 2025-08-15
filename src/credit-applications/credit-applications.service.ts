@@ -38,13 +38,13 @@ export class CreditApplicationsService {
       const approvalResult = await this.creditApprovalService.autoApproveCredit(app.id);
       
       // Onay sonucunu logla
-      console.log(`🎯 Kredi başvurusu ${app.id}: ${approvalResult.reason}`);
-      console.log(`💰 Aylık taksit: ${approvalResult.monthlyPayment} TL`);
-      console.log(`📊 Gelir/Taksit oranı: ${approvalResult.incomeRatio.toFixed(2)}`);
-      console.log(`✅ Otomatik onay: ${approvalResult.approved ? 'BAŞARILI' : 'MANUEL İNCELEME'}`);
+      console.log(` Kredi başvurusu ${app.id}: ${approvalResult.reason}`);
+      console.log(` Aylık taksit: ${approvalResult.monthlyPayment} TL`);
+      console.log(` Gelir/Taksit oranı: ${approvalResult.incomeRatio.toFixed(2)}`);
+      console.log(` Otomatik onay: ${approvalResult.approved ? 'BAŞARILI' : 'MANUEL İNCELEME'}`);
       
     } catch (error) {
-      console.error('❌ Otomatik onay hatası:', error);
+      console.error(' Otomatik onay hatası:', error);
       // Hata durumunda başvuru beklemeye alınır
     }
 
